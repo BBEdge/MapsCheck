@@ -1,2 +1,2 @@
 # MapsCheck
-Brocade check MAPS from supportsave
+Check Brocade MAPS from supportsave
