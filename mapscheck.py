@@ -63,18 +63,18 @@ def writecheck(mapschkdetail, header, maps):
 
 def main():
     global header
-#    parser = argparse.ArgumentParser(description='Process some integers.')
-#    parser.add_argument('-i', '--dinput', help='directory with supportsave files', required=True)
-#    parser.add_argument('-o', '--output', help='directories with result files', required=True)
-#    args = parser.parse_args()
+    parser = argparse.ArgumentParser(description='Process some integers.')
+    parser.add_argument('-i', '--dinput', help='directory with supportsave files', required=True)
+    parser.add_argument('-o', '--output', help='directories with result files', required=True)
+    args = parser.parse_args()
 
     with tempfile.TemporaryDirectory() as tempdir:
         print('The created temporary directory is %s' % tempdir)
 
-#    dinput = args.dinput
-#    output = args.output
-    dinput = '/tmp/supportsave'
-    output = '/tmp/out'
+    dinput = args.dinput
+    output = args.output
+#    dinput = '/tmp/supportsave'
+#    output = '/tmp/out'
     try:
         os.listdir(dinput)
     except FileNotFoundError as e:
@@ -106,7 +106,6 @@ def main():
                         if maps[0]:
                             flagpass = '{:.>56}'.format('.PASS')
                             print(header, flagpass, file=mapschk)
-
                         else:
                             flagfail = '{:.>56}'.format('.FAIL')
                             print(header, flagfail, file=mapschk)
